@@ -34,6 +34,8 @@ gem 'haml-rails'
 gem 'spring', group: :development
 gem 'spring-commands-rspec', '>= 1.0.1'
 
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
