@@ -2,3 +2,37 @@
   .container
     %h1 Items
     %p Mixture の合成アイテムを管理しよう。
+
+.container
+  .row
+    = link_to new_item_path do
+      = button_tag '新規作成', class: 'btn btn-default btn-lg'
+
+    %table.table.table-hover.list
+      %thead
+        %tr
+          %th id
+          %th category
+          %th name
+          %th rarity
+          %th hierarchy
+          %th price
+          %th exp
+          %th activity
+          %th
+      %tbody
+      - @items.each do |item|
+        %tr
+          %td= item.id
+          %td= item.category&.name
+          %td= item.name
+          %td= item.rarity
+          %td= item.hierarchy
+          %td= item.price
+          %td= item.exp
+          %td= item.activity
+          %td
+            = link_to edit_item_path item do
+              = button_tag 'Edit', class: 'btn btn-default'
+
+    = paginate @items
