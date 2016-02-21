@@ -207,6 +207,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed-fu (2.3.5)
+      activerecord (>= 3.1, < 4.3)
+      activesupport (>= 3.1, < 4.3)
     sexp_processor (4.7.0)
     spring (1.6.3)
     spring-commands-rspec (1.0.4)
@@ -263,6 +266,7 @@ DEPENDENCIES
   sass
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed-fu
   spring
   spring-commands-rspec (>= 1.0.1)
   turbolinks
