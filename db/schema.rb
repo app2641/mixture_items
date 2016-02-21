@@ -32,27 +32,27 @@ ActiveRecord::Schema.define(version: 20160220102847) do
   create_table "important_items", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
-    t.boolean  "experience"
-    t.boolean  "activity"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.boolean  "experience",                default: false
+    t.boolean  "activity",                  default: true
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   add_index "important_items", ["experience"], name: "index_important_items_on_experience", using: :btree
   add_index "important_items", ["name"], name: "index_important_items_on_name", unique: true, using: :btree
 
   create_table "items", force: :cascade do |t|
-    t.integer  "category_id", limit: 4,     null: false
+    t.integer  "category_id", limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.integer  "rarity",      limit: 4
     t.integer  "hierarchy",   limit: 4
-    t.integer  "price",       limit: 4
-    t.integer  "exp",         limit: 4
-    t.boolean  "experience"
-    t.boolean  "activity"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "price",       limit: 4,     default: 0
+    t.integer  "exp",         limit: 4,     default: 0
+    t.boolean  "experience",                default: false
+    t.boolean  "activity",                  default: true
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
@@ -60,17 +60,17 @@ ActiveRecord::Schema.define(version: 20160220102847) do
   add_index "items", ["rarity", "experience"], name: "index_items_on_rarity_and_experience", using: :btree
 
   create_table "materials", force: :cascade do |t|
-    t.integer  "category_id", limit: 4,     null: false
+    t.integer  "category_id", limit: 4
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.integer  "rarity",      limit: 4
     t.integer  "hierarchy",   limit: 4
-    t.integer  "price",       limit: 4
-    t.integer  "exp",         limit: 4
-    t.boolean  "experience"
-    t.boolean  "activity"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "price",       limit: 4,     default: 0
+    t.integer  "exp",         limit: 4,     default: 0
+    t.boolean  "experience",                default: false
+    t.boolean  "activity",                  default: true
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   add_index "materials", ["category_id"], name: "index_materials_on_category_id", using: :btree
