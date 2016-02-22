@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :important_items
 
+  resources :categories
+
   # Example resource route with options:
   #   resources :products do
   #     member do

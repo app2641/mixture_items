@@ -4,6 +4,7 @@
       = link_to 'Mixture items', root_path, class: 'navbar-brand'
 
       %ul.nav.navbar-nav
+        %li{ class: "#{'active' if params[:controller] == 'categories'}" }= link_to 'Categories', categories_path
         %li{ class: "#{'active' if params[:controller] == 'materials'}" }= link_to 'Materials', materials_path
         %li{ class: "#{'active' if params[:controller] == 'items'}" }= link_to 'Items', items_path
         %li= link_to 'Recipes', '#'
