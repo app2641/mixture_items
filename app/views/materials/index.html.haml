@@ -1,0 +1,38 @@
+.jumbotron.mixture-hero
+  .container
+    %h1 Materials
+    %p Mixture の素材アイテムを管理しよう。
+
+.container
+  .row
+    = link_to new_material_path do
+      = button_tag '新規作成', class: 'btn btn-default btn-lg'
+
+    %table.table.table-hover.list
+      %thead
+        %tr
+          %th id
+          %th category
+          %th name
+          %th rarity
+          %th hierarchy
+          %th price
+          %th exp
+          %th activity
+          %th
+      %tbody
+      - @materials.each do |material|
+        %tr
+          %td= material.id
+          %td= material.category&.name
+          %td= material.name
+          %td= material.rarity
+          %td= material.hierarchy
+          %td= number_with_delimiter material.price
+          %td= number_with_delimiter material.exp
+          %td= material.activity
+          %td
+            = link_to edit_material_path material do
+              = button_tag 'Edit', class: 'btn btn-default'
+
+    = paginate @materials
