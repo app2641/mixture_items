@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.page params[:page]
+    @items = Item.includes(:category).page params[:page]
   end
 end
